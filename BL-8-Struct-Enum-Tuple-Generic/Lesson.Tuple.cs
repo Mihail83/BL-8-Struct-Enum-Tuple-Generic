@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BL_8_Struct_Enum_Tuple_Generic
 {
     partial class Lesson
@@ -109,7 +110,7 @@ namespace BL_8_Struct_Enum_Tuple_Generic
 
             var songData = GetSongDataValueTuple(song);
             var (title, minutes, seconds, author, album, year) = GetSongDataValueTuple(song);
-           
+
             //Использовать все переменные в коде.
         }
 
@@ -163,7 +164,7 @@ namespace BL_8_Struct_Enum_Tuple_Generic
 
         public static (string title, int minutes, int seconds, string author, string album, int year) GetSongDataValueTuple(Song song)
         {
-            return 
+            return
             (
                 song.Title,
                 song.Duration / 60,

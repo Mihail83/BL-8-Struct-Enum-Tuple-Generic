@@ -21,7 +21,7 @@ namespace BL_8_Struct_Enum_Tuple_Generic
         }
         public static void StructExample2()
         {
-            var array = new Coordinate[] {new Coordinate(20,25) };
+            var array = new Coordinate[] { new Coordinate(20, 25) };
             var list = new List<Coordinate> { new Coordinate(20, 25) };
 
             var arrayElement1 = array[0];
@@ -53,12 +53,42 @@ namespace BL_8_Struct_Enum_Tuple_Generic
         {
             this.x = x;
             this.y = y;
-        } 
-    public double vector()
+        }
+        public double vector()
         {
-            var length = Math.Sqrt(x*x +y*y);
+            var length = Math.Sqrt(x * x + y * y);
             return length;
         }
 
+    }
+
+    public class Rectangle2D   //изначально struct
+    {
+        public int height;
+        public int lenght;
+        public Coordinate rectangle2D_Coordinate;
+
+        public Rectangle2D(int height, int lenght, int xCoord,  int yCoord)
+        {
+            this.height = height;
+            this.lenght = lenght;
+            rectangle2D_Coordinate = new Coordinate(xCoord, yCoord);
+        }
+        public override string ToString()
+        {
+            return $"высота- {height}  длина- {lenght}  координаты: {rectangle2D_Coordinate.x}  {rectangle2D_Coordinate.y}";
+        }
+
+        public bool Equals(Rectangle2D other)   // необходимо если    Rectangle2D    == class
+        {
+            bool result = false;
+
+            if (height == other.height && lenght == other.lenght && rectangle2D_Coordinate.x
+                == other.rectangle2D_Coordinate.x && rectangle2D_Coordinate.y == other.rectangle2D_Coordinate.y)
+            {
+                result = true;
+            }
+            return result;
+        }
     }
 }
